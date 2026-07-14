@@ -129,19 +129,63 @@ details[open] .faq-plus { transform: rotate(45deg); }
 .og-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 640px) { .og-grid { grid-template-columns: 1fr; } }
 
+/* Submenus (tabs) */
+.bb-tabs {
+  position: sticky; top: 65px; z-index: 30;
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+  background: rgba(244,240,231,0.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e6e1d5; padding: 0 20px;
+}
+.bb-tabs::-webkit-scrollbar { display: none; }
+.bb-tab {
+  flex: none; background: none; border: none; cursor: pointer;
+  padding: 16px 16px 14px; font-family: inherit; font-weight: 700; font-size: 14px;
+  color: #8a8578; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; white-space: nowrap;
+}
+.bb-tab:hover { color: #1c3a2b; }
+.bb-tab.active { color: #1c3a2b; border-bottom-color: #d9a441; }
+
+/* Geradores (cartão/assinatura) */
+.gen-wrap { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 28px; align-items: start; }
+@media (max-width: 820px) { .gen-wrap { grid-template-columns: 1fr; } }
+
+/* Do / Não fazer */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 720px) { .do-dont { grid-template-columns: 1fr; } }
+
+/* Bloco de código */
+.code-block {
+  margin: 0; background: #14241c; color: #d7e4dc; border-radius: 12px;
+  padding: 18px 20px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px; line-height: 1.65; white-space: pre;
+}
+
+/* Papel timbrado — rolagem no mobile */
+.lh-scroll { overflow-x: auto; }
+
 .bb-content { padding: 56px 48px 88px; }
 .bb-hero { padding: 88px 48px; }
 .bb-wordmark { font-size: 74px; }
+.bb-hero-dist { font-size: 23px; letter-spacing: 0.42em; }
+.bb-hero-divider { width: 44px; }
 .bb-frota-name { font-size: 46px; }
 @media (max-width: 900px) {
   .bb-lockups, .bb-grid3, .bb-grid4, .bb-apps { grid-template-columns: 1fr 1fr !important; }
 }
 @media (max-width: 620px) {
-  .bb-content { padding: 40px 20px 64px; }
-  .bb-hero { padding: 56px 24px; }
-  .bb-wordmark { font-size: 48px; }
+  .bb-content { padding: 40px 18px 64px; }
+  .bb-hero { padding: 48px 22px; }
+  .bb-wordmark { font-size: 40px; }
+  .bb-hero-dist { font-size: 15px; letter-spacing: 0.28em; }
+  .bb-hero-divider { width: 28px; }
   .bb-frota-name { font-size: 34px; }
 }
 @media (max-width: 560px) {
   .bb-lockups, .bb-grid3, .bb-grid4, .bb-apps { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 400px) {
+  .bb-content { padding: 32px 14px 56px; }
+  .bb-hero { padding: 40px 16px; }
+  .bb-wordmark { font-size: 31px; }
+  .bb-hero-dist { font-size: 12px; letter-spacing: 0.2em; }
 }

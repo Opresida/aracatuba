@@ -22,7 +22,7 @@ Depois do deploy, um ajuste fino de SEO (quando souber a URL final):
 ## Feito
 - [x] Conversão do export `.dc.html` para React 19 + Vite.
 - [x] Todas as seções portadas + seção **Nossos produtos** (cesta básica + bebidas linha seca, split 70/30, galeria de fotos).
-- [x] Rota **/brandbook** (manual de marca).
+- [x] Rota **/brandbook** completa, com submenus: Logo · Cores (copiar hex) · Tipografia · UI System · Papel timbrado (PDF A4) · Cartão & E-mail (gerador de cartão em PDF + assinatura de e-mail HTML) · Manual de uso (fazer/não fazer). Libs de PDF (html2canvas/jspdf) em lazy-load.
 - [x] **Responsividade completa** (mobile/tablet/desktop) com menu hamburger.
 - [x] **Favicon** (SVG + PNG) e **OG image** 1200×630 pra compartilhamento.
 - [x] `netlify.toml` com Node 22, redirect SPA, cache de assets e headers de segurança.
