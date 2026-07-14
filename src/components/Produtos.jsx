@@ -77,6 +77,25 @@ function Card({ linha, i }) {
   );
 }
 
+function Galeria({ linha }) {
+  if (!linha.fotos || linha.fotos.length === 0) return null;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <span style={{ width: 8, height: 8, borderRadius: '50%', background: gold }} />
+        <span style={{ fontWeight: 800, fontSize: 13, letterSpacing: '0.16em', color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase' }}>{linha.titulo}</span>
+      </div>
+      <div className="foto-grid">
+        {linha.fotos.map((f) => (
+          <div key={f.src} style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '3 / 4', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
+            <img src={f.src} alt={f.alt} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Produtos() {
   return (
     <section id="produtos" style={{ background: green, color: '#fff' }}>
@@ -95,6 +114,15 @@ export default function Produtos() {
         <div className="cards-grid" style={{ alignItems: 'stretch' }}>
           {linhas.map((linha, i) => <Card key={linha.chave} linha={linha} i={i} />)}
         </div>
+
+        {/* Galeria de fotos (por linha) */}
+        <Reveal style={{ marginTop: 44, display: 'flex', flexDirection: 'column', gap: 32 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontWeight: 700, fontSize: 12.5, letterSpacing: '0.22em', color: gold, textTransform: 'uppercase' }}>Galeria</span>
+            <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.7)' }}>Um pouco do que passa pelo nosso galpão.</p>
+          </div>
+          {linhas.map((linha) => <Galeria key={linha.chave} linha={linha} />)}
+        </Reveal>
       </div>
     </section>
   );

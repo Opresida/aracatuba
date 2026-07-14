@@ -17,18 +17,29 @@ export const linhas = [
     itens: [
       'Arroz', 'Feijão', 'Açúcar', 'Café', 'Óleo de soja', 'Farinha de trigo',
       'Farinha de mandioca', 'Macarrão', 'Sal', 'Leite', 'Enlatados', 'Biscoitos',
-      'Bolachas', 'Fubá e flocão', 'Molhos e extratos', 'Temperos', 'Grãos e cereais',
+      'Bolacha Amori', 'Bolachas', 'Fubá e flocão', 'Molhos e extratos', 'Temperos', 'Grãos e cereais',
+    ],
+    fotos: [
+      { src: '/images/produtos/alimentos-1.webp', alt: 'Estoque de alimentos no galpão da Araçatuba' },
+      { src: '/images/produtos/alimentos-2.webp', alt: 'Produtos de cesta básica armazenados' },
+      { src: '/images/produtos/alimentos-3.webp', alt: 'Linha de alimentos da Araçatuba' },
     ],
   },
   {
     chave: 'bebidas',
     titulo: 'Bebidas — linha seca',
     pct: 30,
-    resumo: 'Toda a linha seca de bebidas (não refrigeradas): a distribuição completa para abastecer o seu ponto de venda.',
+    resumo: 'Toda a linha seca de bebidas — de refrigerantes e águas a cervejas e destilados. Distribuição completa para abastecer o seu ponto de venda.',
     icone: 'bebida',
     itens: [
       'Refrigerantes', 'Águas minerais', 'Água com gás', 'Sucos', 'Néctares',
       'Água de coco', 'Energéticos', 'Isotônicos', 'Chás prontos', 'Cervejas',
+      'Whisky', 'Whisky Old Parr', 'Whisky Red Label', 'Cachaça Camelinho (Jamel)', 'Campari', 'Gin Rocks',
+    ],
+    fotos: [
+      { src: '/images/produtos/bebidas-1.webp', alt: 'Pallets de cerveja no galpão da Araçatuba' },
+      { src: '/images/produtos/bebidas-2.webp', alt: 'Estoque de bebidas da Araçatuba' },
+      { src: '/images/produtos/bebidas-3.webp', alt: 'Linha de bebidas da Araçatuba' },
     ],
   },
 ];

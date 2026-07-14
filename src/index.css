@@ -84,6 +84,12 @@ details[open] .faq-plus { transform: rotate(45deg); }
   .op-badge { font-size: 34px !important; }
 }
 
+/* ===== Galeria de produtos ===== */
+.foto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 560px) {
+  .foto-grid { grid-template-columns: 1fr 1fr; }
+}
+
 /* ===== Brandbook (/brandbook) ===== */
 @media (max-width: 900px) {
   .bb-lockups, .bb-grid3, .bb-grid4, .bb-apps { grid-template-columns: 1fr 1fr !important; }
