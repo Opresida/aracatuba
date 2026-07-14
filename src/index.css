@@ -126,6 +126,9 @@ details[open] .faq-plus { transform: rotate(45deg); }
 }
 
 /* ===== Brandbook (/brandbook) ===== */
+.og-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .og-grid { grid-template-columns: 1fr; } }
+
 .bb-content { padding: 56px 48px 88px; }
 .bb-hero { padding: 88px 48px; }
 .bb-wordmark { font-size: 74px; }

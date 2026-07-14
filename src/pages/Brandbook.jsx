@@ -166,6 +166,38 @@ export default function Brandbook() {
           </div>
         </Block>
 
+        {/* ===== CARTÕES DE COMPARTILHAMENTO (OG) ===== */}
+        <Block label="Cartões de compartilhamento (OG)">
+          <div className="og-grid">
+            {[
+              { img: '/og-image.png', nome: 'Site institucional', file: 'aracatuba-og-site.png' },
+              { img: '/og-brandbook.png', nome: 'Manual de marca', file: 'aracatuba-og-manual.png' },
+            ].map((o) => (
+              <div key={o.img} style={{ ...card, padding: 16, flexDirection: 'column', gap: 14 }}>
+                <div style={{ borderRadius: 12, overflow: 'hidden', border: `1px solid ${border}`, aspectRatio: '1200 / 630' }}>
+                  <img src={o.img} alt={`Cartão de compartilhamento — ${o.nome}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ fontWeight: 800, fontSize: 15, color: green }}>{o.nome}</span>
+                    <span style={{ fontSize: 12.5, color: muted }}>PNG · 1200×630</span>
+                  </div>
+                  <a
+                    href={o.img} download={o.file}
+                    className="btn-green"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontWeight: 700, fontSize: 14, padding: '11px 18px', borderRadius: 999 }}
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 3v12" /><path d="m7 11 5 5 5-5" /><path d="M5 21h14" />
+                    </svg>
+                    Baixar
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Block>
+
       </div>
     </div>
   );
