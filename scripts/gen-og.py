@@ -72,6 +72,30 @@ d.text((W / 2, 540), "Abastecendo o seu negócio  •  Manaus / AM", font=f_tag,
 og.save(os.path.join(DIR, "og-image.png"), "PNG")
 print("og-image.png 1200x630 gerado")
 
+# ---------- OG image (brandbook) ----------
+ogb = Image.new("RGB", (W, H), GREEN)
+ogb.paste(Image.alpha_composite(ogb.convert("RGBA"), glow).convert("RGB"), (0, 0))
+d = ImageDraw.Draw(ogb)
+emb2 = emblema(170, 132)
+ogb.paste(emb2, (int(W / 2 - 85), 138), emb2)
+d.text((W / 2, 370), "ARAÇATUBA", font=ImageFont.truetype(FBLACK, 82), fill=WHITE, anchor="mm")
+letter_spaced(d, (W / 2, 418), "DISTRIBUIDORA", ImageFont.truetype(FBOLD, 26), GOLD, 12, anchor_center_x=True)
+# pílula "MANUAL DE MARCA"
+pill_f = ImageFont.truetype(FBOLD, 30)
+pill_txt = "MANUAL DE MARCA"
+pw = d.textlength(pill_txt, font=pill_f) + 30 * (len(pill_txt) - 1) * 0  # base
+# usa espaçamento manual, então mede diferente
+spacing = 10
+letters_w = sum(d.textlength(c, font=pill_f) for c in pill_txt) + spacing * (len(pill_txt) - 1)
+pad_x, pad_y = 34, 16
+px0 = W / 2 - letters_w / 2 - pad_x
+px1 = W / 2 + letters_w / 2 + pad_x
+py0, py1 = 500, 500 + 30 + pad_y * 2
+d.rounded_rectangle([px0, py0, px1, py1], radius=(py1 - py0) / 2, fill=GOLD)
+letter_spaced(d, (W / 2, py0 + pad_y), pill_txt, pill_f, GREEN, spacing, anchor_center_x=True)
+ogb.save(os.path.join(DIR, "og-brandbook.png"), "PNG")
+print("og-brandbook.png 1200x630 gerado")
+
 # ---------- favicon PNG (fallback) ----------
 fav = emblema(180, 128)
 bg = Image.new("RGBA", (180, 180), (0, 0, 0, 0))

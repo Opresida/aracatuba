@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { brand, site } from '../data/site.js';
 
@@ -28,6 +29,10 @@ function Block({ label, children }) {
 const card = { background: paper, border: `1px solid ${border}`, borderRadius: 20, display: 'flex' };
 
 export default function Brandbook() {
+  useEffect(() => {
+    document.title = 'Manual de Marca — Araçatuba Distribuidora';
+  }, []);
+
   return (
     <div style={{ background: cream, minHeight: '100vh', fontFamily: 'Archivo, sans-serif', color: ink }}>
       {/* Barra superior */}

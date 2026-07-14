@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import Empresa from '../components/Empresa.jsx';
@@ -11,6 +12,10 @@ import Footer from '../components/Footer.jsx';
 import WhatsAppBtn from '../components/WhatsAppBtn.jsx';
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'Araçatuba Distribuidora — Alimentos e bebidas em Manaus/AM';
+  }, []);
+
   return (
     <>
       <Header />

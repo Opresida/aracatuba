@@ -5,7 +5,13 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA: todas as rotas caem no index.html (ex.: /brandbook no refresh)
+# /brandbook serve o HTML próprio (OG específica lida pelos bots)
+[[redirects]]
+  from = "/brandbook"
+  to = "/brandbook.html"
+  status = 200
+
+# SPA: demais rotas caem no index.html (React Router assume no cliente)
 [[redirects]]
   from = "/*"
   to = "/index.html"

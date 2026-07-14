@@ -8,8 +8,8 @@ O projeto está **pronto pra publicar**. Como o deploy exige login na Netlify (n
 3. (Opcional) **Domain settings** → definir o domínio/subdomínio final.
 
 Depois do deploy, um ajuste fino de SEO (quando souber a URL final):
-- [ ] Trocar `og:image`/`twitter:image` no `index.html` de caminho relativo (`/og-image.png`) para **URL absoluta** (ex.: `https://aracatuba.netlify.app/og-image.png`) — o WhatsApp exige absoluta pra mostrar a prévia.
-- [ ] Adicionar `og:url` com o domínio final.
+- [ ] Trocar `og:image`/`twitter:image` para **URL absoluta** nos dois HTMLs — `index.html` (`/og-image.png`) e `brandbook.html` (`/og-brandbook.png`). O WhatsApp exige URL absoluta pra mostrar a prévia (ex.: `https://aracatuba.netlify.app/og-image.png`).
+- [ ] Adicionar `og:url` com o domínio final em cada HTML.
 
 ## Backend / integrações (quando aprovado)
 - [ ] **Formulários reais** — Ouvidoria e Trabalhe conosco hoje são client-side. Ligar a Netlify Forms (Humberto pediu: *depois*, não agora). Upload de currículo (PDF) precisa de storage.
