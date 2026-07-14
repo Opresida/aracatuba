@@ -1,24 +1,30 @@
 # TODO — Araçatuba Distribuidora
 
-## Pendências técnicas
-- [ ] **Favicon** — adicionar `public/favicon.ico` + `<link rel="icon">` no `index.html` (hoje dá 404, cosmético).
-- [ ] **OG image** — gerar `public/og-image.png` (1200×630) e apontar as metas `og:image`/`twitter:image` no `index.html`.
-- [ ] **Domínio/URL** — preencher `og:url` quando o domínio final for definido.
+## Deploy Netlify — passo manual (só isto falta)
+O projeto está **pronto pra publicar**. Como o deploy exige login na Netlify (não dá pra automatizar por aqui), faça uma vez:
+
+1. Netlify → **Add new site → Import an existing project → GitHub → `Opresida/aracatuba`**.
+2. Build já vem preenchido pelo `netlify.toml` (command `npm run build`, publish `dist`, Node 22). É só **Deploy**.
+3. (Opcional) **Domain settings** → definir o domínio/subdomínio final.
+
+Depois do deploy, um ajuste fino de SEO (quando souber a URL final):
+- [ ] Trocar `og:image`/`twitter:image` no `index.html` de caminho relativo (`/og-image.png`) para **URL absoluta** (ex.: `https://aracatuba.netlify.app/og-image.png`) — o WhatsApp exige absoluta pra mostrar a prévia.
+- [ ] Adicionar `og:url` com o domínio final.
 
 ## Backend / integrações (quando aprovado)
-- [ ] **Formulários reais** — Ouvidoria e Trabalhe conosco hoje são client-side (só mostram sucesso). Ligar a Netlify Forms (padrão GLOMAM) ou e-mail (Resend). Upload de currículo (PDF) precisa de storage.
-- [ ] **Redes sociais** — trocar os `#` do rodapé pelos perfis reais (Instagram/Facebook/X) quando existirem.
+- [ ] **Formulários reais** — Ouvidoria e Trabalhe conosco hoje são client-side. Ligar a Netlify Forms (Humberto pediu: *depois*, não agora). Upload de currículo (PDF) precisa de storage.
+- [ ] **Redes sociais** — trocar os `#` do rodapé pelos perfis reais quando existirem.
 
 ## Conteúdo
-- [ ] Substituir fotos do galpão/frota por versões finais quando o cliente enviar as definitivas.
-- [ ] Confirmar telefone/WhatsApp com o cliente (hoje: (92) 8590-2501 / 559285902501).
-
-## Deploy
-- [ ] Publicar no Netlify e configurar domínio.
-- [ ] Decidir se o repo `Opresida/aracatuba` passa a hospedar esta versão React (substituindo o export `.dc.html`).
+- [ ] Substituir/adicionar fotos de produto conforme o cliente enviar (galeria é data-driven em `src/data/produtos.js`).
+- [ ] Confirmar telefone/WhatsApp com o cliente.
 
 ## Feito
-- [x] Conversão fiel do export `.dc.html` para React 19 + Vite.
-- [x] Todas as 10 seções portadas e verificadas no navegador.
-- [x] Responsividade mobile adicionada.
-- [x] Build de produção limpo.
+- [x] Conversão do export `.dc.html` para React 19 + Vite.
+- [x] Todas as seções portadas + seção **Nossos produtos** (cesta básica + bebidas linha seca, split 70/30, galeria de fotos).
+- [x] Rota **/brandbook** (manual de marca).
+- [x] **Responsividade completa** (mobile/tablet/desktop) com menu hamburger.
+- [x] **Favicon** (SVG + PNG) e **OG image** 1200×630 pra compartilhamento.
+- [x] `netlify.toml` com Node 22, redirect SPA, cache de assets e headers de segurança.
+- [x] Build de produção validado (preview servindo `dist` com todos os assets 200).
+- [x] Repo `Opresida/aracatuba` hospedando a versão React.
