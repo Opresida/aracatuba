@@ -6,8 +6,9 @@ export const brand = {
   gold: '#d9a441',
   ink: '#1a1a17',
   muted: '#8a8578',
-  cream: '#f4f0e7',
-  border: '#e6e1d5',
+  cream: '#f4f0e7', // fundo (bg)
+  border: '#e6e1d5', // hairline
+  paper: '#ffffff',
   whatsapp: '#25D366',
 };
 

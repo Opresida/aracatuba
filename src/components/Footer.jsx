@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { brand, site } from '../data/site.js';
 import Logo from './Logo.jsx';
 
@@ -52,6 +53,7 @@ export default function Footer() {
           {inst.map((n) => (
             <a key={n.href} href={n.href} className="link-foot" style={{ fontSize: 14 }}>{n.label}</a>
           ))}
+          <Link to="/brandbook" className="link-foot" style={{ fontSize: 14 }}>Manual de marca</Link>
         </div>
       </div>
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>

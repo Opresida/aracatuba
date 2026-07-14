@@ -83,3 +83,11 @@ details[open] .faq-plus { transform: rotate(45deg); }
   .section-h2 { font-size: 27px !important; }
   .op-badge { font-size: 34px !important; }
 }
+
+/* ===== Brandbook (/brandbook) ===== */
+@media (max-width: 900px) {
+  .bb-lockups, .bb-grid3, .bb-grid4, .bb-apps { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 560px) {
+  .bb-lockups, .bb-grid3, .bb-grid4, .bb-apps { grid-template-columns: 1fr !important; }
+}
