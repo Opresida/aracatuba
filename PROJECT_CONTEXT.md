@@ -6,6 +6,7 @@
 - **Projeto React (ativo):** `C:\Users\user\aracatuba`
 - **Export original de design:** `design-source/` (`.dc.html`) — cópia do que veio no Desktop
 - **Repo GitHub:** https://github.com/Opresida/aracatuba (org Opresida)
+- **No ar:** https://aracatubadistribuidora.com · https://aracatubadistribuidora.netlify.app (Netlify DNS; domínio Primary)
 
 ## Como rodar
 ```bash

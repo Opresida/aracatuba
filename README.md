@@ -2,6 +2,10 @@
 
 Site institucional + manual de marca da **Distribuidora Araçatuba de Alimentos LTDA** (CNPJ 34.602.080/0001-77 — Manaus/AM). Cliente da **MAZARI Holding**. Portado do export estático `.dc.html` para a stack React que a MAZARI usa nos projetos institucionais (referência: GLOMAM).
 
+## No ar
+- **Produção:** https://aracatubadistribuidora.com
+- **Netlify:** https://aracatubadistribuidora.netlify.app
+
 ## Stack
 - **React 19** + **Vite 8** (SPA multi-page)
 - **react-router-dom 7** — rotas `/` e `/brandbook`

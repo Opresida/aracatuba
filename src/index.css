@@ -12,6 +12,22 @@ a { color: #1c3a2b; text-decoration: none; }
 img { display: block; max-width: 100%; }
 input, textarea, select, button { font-family: inherit; }
 
+/* ===== Loader (tela de carregamento) ===== */
+@keyframes ldr-spin { to { transform: rotate(360deg); } }
+@keyframes ldr-fill { from { width: 0; } to { width: 100%; } }
+.ldr-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 3px solid rgba(217, 164, 65, 0.18); border-top-color: #d9a441;
+  animation: ldr-spin 0.9s linear infinite;
+}
+.ldr-bar {
+  height: 100%; width: 0; background: #d9a441; border-radius: 999px;
+  animation: ldr-fill 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ldr-ring { animation-duration: 2s; }
+}
+
 /* ===== Carrossel de depoimentos ===== */
 @keyframes marquee {
   from { transform: translateX(0); }
