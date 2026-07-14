@@ -21,7 +21,7 @@ export default function Operacao() {
       </Reveal>
 
       {/* Painel da marca */}
-      <Reveal style={{ borderRadius: 24, background: brand.green, padding: '56px 48px', position: 'relative', overflow: 'hidden', marginBottom: 20 }}>
+      <Reveal className="brand-panel" style={{ borderRadius: 24, background: brand.green, position: 'relative', overflow: 'hidden', marginBottom: 20 }}>
         <div style={{ position: 'absolute', top: 0, right: 0, width: 280, height: 280, background: 'rgba(217,164,65,0.12)', borderRadius: '50%', transform: 'translate(90px,-90px)' }} />
         <div style={{ display: 'flex', alignItems: 'center', gap: 32, position: 'relative', flexWrap: 'wrap' }}>
           <div style={{ width: 110, height: 110, borderRadius: 20, background: brand.gold, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', flex: 'none' }}>

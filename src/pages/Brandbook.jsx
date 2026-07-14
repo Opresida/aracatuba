@@ -44,14 +44,14 @@ export default function Brandbook() {
         </div>
       </header>
 
-      <div style={{ padding: '56px 48px 88px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 56 }}>
+      <div className="bb-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 56 }}>
 
         {/* ===== LOGO PRINCIPAL ===== */}
-        <div style={{ ...card, width: '100%', maxWidth: 1120, padding: '88px 48px', flexDirection: 'column', alignItems: 'center', gap: 8, boxShadow: '0 24px 60px -40px rgba(20,30,20,0.5)' }}>
+        <div className="bb-hero" style={{ ...card, width: '100%', maxWidth: 1120, flexDirection: 'column', alignItems: 'center', gap: 8, boxShadow: '0 24px 60px -40px rgba(20,30,20,0.5)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 36, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Emblem size={148} baseline />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <div style={{ fontWeight: 900, fontSize: 74, lineHeight: 0.92, letterSpacing: '-0.02em', color: green }}>ARAÇATUBA</div>
+              <div className="bb-wordmark" style={{ fontWeight: 900, lineHeight: 0.92, letterSpacing: '-0.02em', color: green }}>ARAÇATUBA</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                 <div style={{ height: 2, width: 44, background: gold }} />
                 <div style={{ fontWeight: 700, fontSize: 23, letterSpacing: '0.42em', color: ink }}>DISTRIBUIDORA</div>
@@ -140,7 +140,7 @@ export default function Brandbook() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
                   <Emblem size={88} bg={gold} letter={green} ring={green} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <div style={{ fontWeight: 900, fontSize: 46, lineHeight: 0.9, color: paper, letterSpacing: '-0.02em' }}>ARAÇATUBA</div>
+                    <div className="bb-frota-name" style={{ fontWeight: 900, lineHeight: 0.9, color: paper, letterSpacing: '-0.02em' }}>ARAÇATUBA</div>
                     <div style={{ fontWeight: 700, fontSize: 15, letterSpacing: '0.32em', color: gold }}>DISTRIBUIDORA</div>
                     <div style={{ marginTop: 4, fontWeight: 600, fontSize: 13, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase' }}>{site.tagline}</div>
                   </div>

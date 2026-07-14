@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { brand } from '../data/site.js';
 import Reveal from './Reveal.jsx';
 
-const inputLight = { padding: '14px 16px', border: `1px solid ${brand.border}`, borderRadius: 12, background: brand.cream, fontSize: 15, color: brand.ink };
-const inputDark = { padding: '14px 16px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 12, background: 'rgba(255,255,255,0.08)', fontSize: 15, color: '#fff' };
+const inputLight = { width: '100%', minWidth: 0, padding: '14px 16px', border: `1px solid ${brand.border}`, borderRadius: 12, background: brand.cream, fontSize: 15, color: brand.ink };
+const inputDark = { width: '100%', minWidth: 0, padding: '14px 16px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 12, background: 'rgba(255,255,255,0.08)', fontSize: 15, color: '#fff' };
 
 function Ouvidoria() {
   const [sent, setSent] = useState(false);
@@ -21,7 +21,7 @@ function Ouvidoria() {
       ) : (
         <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <input required placeholder="Seu nome" style={inputLight} />
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          <div className="form-row">
             <input required placeholder="E-mail ou telefone" style={inputLight} />
             <select style={inputLight}>
               <option>Elogio</option><option>Sugestão</option><option>Reclamação</option><option>Dúvida</option>
@@ -53,7 +53,7 @@ function Trabalhe() {
       ) : (
         <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <input required placeholder="Seu nome" style={inputDark} />
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          <div className="form-row">
             <input required placeholder="Telefone / WhatsApp" style={inputDark} />
             <select style={inputDark}>
               <option style={{ color: brand.ink }}>Vendas</option>
