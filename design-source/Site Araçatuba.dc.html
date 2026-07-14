@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #f4f0e7; }
+  a { color: #1c3a2b; text-decoration: none; }
+  a:hover { color: #d9a441; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  input, textarea, select, button { font-family: inherit; }
+  summary::-webkit-details-marker { display: none; }
+  summary { list-style: none; }
+</style>
+<script src="image-slot.js"></script>
+</helmet>
+
+<div style="font-family:Archivo,sans-serif;color:#1a1a17;background:#f4f0e7;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(244,240,231,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #e6e1d5;">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#hero" style="display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:10px;background:{{ green }};display:flex;align-items:center;justify-content:center;position:relative;flex:none;">
+          <div style="position:absolute;inset:4px;border:1.5px solid {{ gold }};border-radius:6px;opacity:0.85;"></div>
+          <span style="font-weight:900;font-size:28px;line-height:1;color:{{ gold }};letter-spacing:-0.03em;">A</span>
+        </div>
+        <div style="display:flex;flex-direction:column;line-height:0.95;">
+          <span style="font-weight:900;font-size:19px;color:{{ green }};letter-spacing:-0.02em;">ARAÇATUBA</span>
+          <span style="font-weight:700;font-size:8.5px;letter-spacing:0.32em;color:{{ ink }};">DISTRIBUIDORA</span>
+        </div>
+      </a>
+      <nav style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
+        <a href="#empresa" style="font-weight:600;font-size:14px;color:{{ ink }};">A empresa</a>
+        <a href="#operacao" style="font-weight:600;font-size:14px;color:{{ ink }};">Operação</a>
+        <a href="#estrutura" style="font-weight:600;font-size:14px;color:{{ ink }};">Estrutura</a>
+        <a href="#trabalhe" style="font-weight:600;font-size:14px;color:{{ ink }};">Trabalhe conosco</a>
+        <a href="#faq" style="font-weight:600;font-size:14px;color:{{ ink }};">FAQ</a>
+        <a href="{{ wa }}" target="_blank" style="font-weight:700;font-size:14px;color:#fff;background:{{ green }};padding:10px 18px;border-radius:999px;" style-hover="background:{{ gold }};color:{{ green }};">Fale conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO HUMANIZADO ===== -->
+  <section id="hero" style="max-width:1200px;margin:0 auto;padding:72px 28px 84px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;width:fit-content;background:rgba(28,58,43,0.08);padding:8px 16px;border-radius:999px;">
+        <div style="width:7px;height:7px;border-radius:50%;background:{{ gold }};"></div>
+        <span style="font-weight:700;font-size:12.5px;letter-spacing:0.14em;color:{{ green }};text-transform:uppercase;">Manaus • Amazonas • desde 2019</span>
+      </div>
+      <h1 style="margin:0;font-weight:900;font-size:56px;line-height:1.02;letter-spacing:-0.025em;color:{{ green }};text-wrap:balance;">Gente que abastece o seu negócio, todos os dias.</h1>
+      <p style="margin:0;font-size:19px;line-height:1.55;color:{{ ink }};max-width:520px;text-wrap:pretty;">Somos uma distribuidora de alimentos e bebidas que nasceu para estar perto de quem faz o comércio de Manaus acontecer. Atendimento próximo, entrega no prazo e um portfólio completo para a sua prateleira nunca ficar vazia.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:4px;">
+        <a href="{{ wa }}" target="_blank" style="font-weight:700;font-size:15px;color:#fff;background:{{ green }};padding:15px 26px;border-radius:999px;" style-hover="background:{{ gold }};color:{{ green }};">Fazer um pedido</a>
+        <a href="#empresa" style="font-weight:700;font-size:15px;color:{{ green }};background:transparent;border:1.5px solid {{ green }};padding:15px 26px;border-radius:999px;" style-hover="background:{{ green }};color:#fff;">Conheça a empresa</a>
+      </div>
+      <div style="display:flex;gap:34px;margin-top:16px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;"><span style="font-weight:900;font-size:30px;color:{{ green }};">2019</span><span style="font-size:13px;color:{{ muted }};font-weight:600;">ano de fundação</span></div>
+        <div style="display:flex;flex-direction:column;"><span style="font-weight:900;font-size:30px;color:{{ green }};">+40</span><span style="font-size:13px;color:{{ muted }};font-weight:600;">categorias de produtos</span></div>
+        <div style="display:flex;flex-direction:column;"><span style="font-weight:900;font-size:30px;color:{{ green }};">7 dias</span><span style="font-size:13px;color:{{ muted }};font-weight:600;">de logística ativa</span></div>
+      </div>
+    </div>
+    <div style="position:relative;">
+      <div style="border-radius:26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 70px -40px rgba(20,40,25,0.6);">
+        <image-slot id="hero-equipe" shape="rect" src="images/hero-equipe.webp" placeholder="Foto da equipe / atendimento (retrato 4:5)"></image-slot>
+      </div>
+      <div style="position:absolute;bottom:-22px;left:-22px;background:{{ green }};color:#fff;border-radius:18px;padding:18px 22px;max-width:230px;box-shadow:0 18px 40px -22px rgba(20,40,25,0.7);">
+        <div style="font-weight:800;font-size:15px;color:{{ gold }};margin-bottom:4px;">Perto de você</div>
+        <div style="font-size:13.5px;line-height:1.45;color:rgba(255,255,255,0.9);">Um time que conhece o comércio de Manaus pelo nome.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMPRESA E HISTÓRIA ===== -->
+  <section id="empresa" style="background:#fff;border-top:1px solid #e6e1d5;border-bottom:1px solid #e6e1d5;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 28px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:18px;position:sticky;top:96px;">
+        <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">A empresa</span>
+        <h2 style="margin:0;font-weight:900;font-size:40px;line-height:1.05;letter-spacing:-0.02em;color:{{ green }};text-wrap:balance;">Nascida em Manaus, feita para servir o comércio local.</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:{{ ink }};text-wrap:pretty;">A <strong>Distribuidora Araçatuba de Alimentos</strong> começou em 2019 como representação comercial de produtos alimentícios e bebidas. De lá para cá, crescemos para nos tornar um parceiro completo de abastecimento — do atacado à logística de entrega.</p>
+        <div style="margin-top:6px;padding:16px 20px;background:#f4f0e7;border-radius:14px;border:1px solid #e6e1d5;">
+          <div style="font-size:12px;color:{{ muted }};font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Razão social</div>
+          <div style="font-size:14.5px;font-weight:600;">Distribuidora Araçatuba de Alimentos LTDA</div>
+          <div style="font-size:13px;color:{{ muted }};margin-top:6px;font-family:monospace;">CNPJ 34.602.080/0001-77</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:#f4f0e7;border:1px solid #e6e1d5;border-radius:18px;padding:26px;">
+            <div style="width:40px;height:40px;border-radius:10px;background:{{ green }};display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><div style="width:16px;height:16px;border:2.5px solid {{ gold }};border-radius:4px;"></div></div>
+            <h3 style="margin:0 0 6px;font-weight:800;font-size:18px;color:{{ green }};">Portfólio completo</h3>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:{{ ink }};">Alimentos, bebidas, laticínios, padaria, higiene e limpeza — tudo em um só fornecedor.</p>
+          </div>
+          <div style="background:#f4f0e7;border:1px solid #e6e1d5;border-radius:18px;padding:26px;">
+            <div style="width:40px;height:40px;border-radius:10px;background:{{ green }};display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><div style="width:16px;height:16px;border-radius:50%;border:2.5px solid {{ gold }};"></div></div>
+            <h3 style="margin:0 0 6px;font-weight:800;font-size:18px;color:{{ green }};">Atendimento próximo</h3>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:{{ ink }};">Consultores que conhecem cada cliente e ajudam a montar o pedido certo.</p>
+          </div>
+          <div style="background:#f4f0e7;border:1px solid #e6e1d5;border-radius:18px;padding:26px;">
+            <div style="width:40px;height:40px;border-radius:10px;background:{{ green }};display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><div style="width:16px;height:16px;transform:rotate(45deg);border:2.5px solid {{ gold }};"></div></div>
+            <h3 style="margin:0 0 6px;font-weight:800;font-size:18px;color:{{ green }};">Entrega no prazo</h3>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:{{ ink }};">Frota e roteirização próprias para cumprir o combinado com o seu estoque.</p>
+          </div>
+          <div style="background:#f4f0e7;border:1px solid #e6e1d5;border-radius:18px;padding:26px;">
+            <div style="width:40px;height:40px;border-radius:10px;background:{{ green }};display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><div style="width:16px;height:3px;background:{{ gold }};box-shadow:0 6px 0 {{ gold }},0 -6px 0 {{ gold }};"></div></div>
+            <h3 style="margin:0 0 6px;font-weight:800;font-size:18px;color:{{ green }};">Escala de atacado</h3>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:{{ ink }};">Poder de compra que vira preço competitivo na sua prateleira.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPERAÇÃO DE DISTRIBUIÇÃO ===== -->
+  <section id="operacao" style="max-width:1200px;margin:0 auto;padding:88px 28px;">
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:40px;max-width:640px;">
+      <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Operação</span>
+      <h2 style="margin:0;font-weight:900;font-size:40px;line-height:1.05;letter-spacing:-0.02em;color:{{ green }};text-wrap:balance;">Uma logística que veste a camisa da marca.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.6;color:{{ ink }};text-wrap:pretty;">Do depósito à porta do cliente, cada etapa é pensada para a mercadoria chegar certa e no tempo. Nossa frota carrega a identidade da Araçatuba por toda a região.</p>
+    </div>
+
+    <!-- mock caminhão com logo -->
+    <div style="border-radius:24px;background:{{ green }};padding:56px 48px;position:relative;overflow:hidden;margin-bottom:20px;">
+      <div style="position:absolute;top:0;right:0;width:280px;height:280px;background:rgba(217,164,65,0.12);border-radius:50%;transform:translate(90px,-90px);"></div>
+      <div style="display:flex;align-items:center;gap:32px;position:relative;flex-wrap:wrap;">
+        <div style="width:110px;height:110px;border-radius:20px;background:{{ gold }};display:flex;align-items:center;justify-content:center;position:relative;flex:none;">
+          <div style="position:absolute;inset:8px;border:2.5px solid {{ green }};border-radius:13px;opacity:0.7;"></div>
+          <span style="font-weight:900;font-size:70px;line-height:1;color:{{ green }};letter-spacing:-0.03em;">A</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-weight:900;font-size:52px;line-height:0.9;color:#fff;letter-spacing:-0.02em;">ARAÇATUBA</div>
+          <div style="font-weight:700;font-size:17px;letter-spacing:0.34em;color:{{ gold }};">DISTRIBUIDORA</div>
+          <div style="margin-top:6px;font-weight:600;font-size:14px;letter-spacing:0.06em;color:rgba(255,255,255,0.75);text-transform:uppercase;">{{ tagline }}</div>
+        </div>
+      </div>
+      <div style="margin-top:34px;height:2px;background:rgba(255,255,255,0.12);"></div>
+      <div style="margin-top:22px;display:flex;gap:40px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-weight:800;font-size:15px;color:{{ gold }};">Roteirização</span><span style="font-size:13.5px;color:rgba(255,255,255,0.8);">entregas organizadas por região</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-weight:800;font-size:15px;color:{{ gold }};">Depósito próprio</span><span style="font-size:13.5px;color:rgba(255,255,255,0.8);">armazenagem e separação ágil</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-weight:800;font-size:15px;color:{{ gold }};">Frota dedicada</span><span style="font-size:13.5px;color:rgba(255,255,255,0.8);">transporte rodoviário de carga</span></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="border-radius:20px;overflow:hidden;aspect-ratio:16/10;"><image-slot id="op-frota-1" shape="rect" src="images/frota-1.webp" placeholder="Foto da frota / caminhão adesivado"></image-slot></div>
+      <div style="border-radius:20px;overflow:hidden;aspect-ratio:16/10;"><image-slot id="op-frota-2" shape="rect" src="images/frota-2.webp" placeholder="Foto de carregamento / equipe na doca"></image-slot></div>
+    </div>
+  </section>
+
+  <!-- ===== PROVA SOCIAL — CARROSSEL INFINITO ===== -->
+  <section id="clientes" style="background:#fff;border-top:1px solid #e6e1d5;border-bottom:1px solid #e6e1d5;padding:80px 0;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 28px 40px;display:flex;flex-direction:column;gap:10px;">
+      <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Prova social</span>
+      <h2 style="margin:0;font-weight:900;font-size:36px;line-height:1.05;letter-spacing:-0.02em;color:{{ green }};">Quem abastece com a Araçatuba, recomenda.</h2>
+    </div>
+    <div style="position:relative;">
+      <div style="display:flex;gap:20px;width:max-content;animation:marquee 42s linear infinite;padding:0 10px;" style-hover="animationPlayState:paused;">
+        <sc-for list="{{ depoimentos }}" as="d" hint-placeholder-count="8">
+          <div style="width:340px;background:#f4f0e7;border:1px solid #e6e1d5;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;flex:none;">
+            <div style="display:flex;gap:3px;color:{{ gold }};font-size:16px;">★★★★★</div>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:{{ ink }};text-wrap:pretty;">{{ d.texto }}</p>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+              <div style="width:40px;height:40px;border-radius:50%;background:{{ green }};display:flex;align-items:center;justify-content:center;color:{{ gold }};font-weight:800;font-size:16px;flex:none;">{{ d.inicial }}</div>
+              <div style="display:flex;flex-direction:column;line-height:1.2;"><span style="font-weight:800;font-size:14px;color:{{ green }};">{{ d.nome }}</span><span style="font-size:12.5px;color:{{ muted }};">{{ d.negocio }}</span></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSSA ESTRUTURA ===== -->
+  <section id="estrutura" style="max-width:1200px;margin:0 auto;padding:88px 28px;">
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:38px;max-width:640px;">
+      <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Nossa estrutura</span>
+      <h2 style="margin:0;font-weight:900;font-size:40px;line-height:1.05;letter-spacing:-0.02em;color:{{ green }};text-wrap:balance;">Espaço, organização e capacidade para escalar.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.6;color:{{ ink }};text-wrap:pretty;">Nosso galpão foi pensado para armazenar com segurança e separar pedidos com rapidez. <span style="color:{{ muted }};">(As fotos abaixo serão substituídas pelas imagens reais quando estiverem prontas.)</span></p>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:520px;">
+      <div style="grid-row:span 2;border-radius:22px;overflow:hidden;"><image-slot id="estr-galpao-1" shape="rect" src="images/galpao-1.webp" placeholder="Foto principal do galpão"></image-slot></div>
+      <div style="border-radius:22px;overflow:hidden;"><image-slot id="estr-galpao-2" shape="rect" src="images/galpao-2.webp" placeholder="Prateleiras / estoque"></image-slot></div>
+      <div style="border-radius:22px;overflow:hidden;"><image-slot id="estr-galpao-3" shape="rect" src="images/galpao-3.webp" placeholder="Doca / separação de pedidos"></image-slot></div>
+    </div>
+  </section>
+
+  <!-- ===== OUVIDORIA + TRABALHE CONOSCO ===== -->
+  <section style="background:#fff;border-top:1px solid #e6e1d5;border-bottom:1px solid #e6e1d5;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 28px;display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+
+      <!-- OUVIDORIA -->
+      <div id="ouvidoria" style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Ouvidoria</span>
+          <h2 style="margin:0;font-weight:900;font-size:32px;line-height:1.08;letter-spacing:-0.02em;color:{{ green }};">Fale com a gente. A gente ouve.</h2>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:{{ ink }};">Elogios, sugestões ou reclamações — todo retorno nos ajuda a melhorar o atendimento.</p>
+        </div>
+        <sc-if value="{{ ouvSent }}" hint-placeholder-val="{{ false }}">
+          <div style="background:rgba(28,58,43,0.08);border:1px solid {{ green }};border-radius:16px;padding:24px;color:{{ green }};font-weight:600;font-size:15px;">Recebemos sua mensagem. Obrigado pelo contato — retornaremos em breve. 🙌</div>
+        </sc-if>
+        <sc-if value="{{ ouvOpen }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submitOuv }}" style="display:flex;flex-direction:column;gap:14px;">
+          <input required placeholder="Seu nome" style="padding:14px 16px;border:1px solid #e6e1d5;border-radius:12px;background:#f4f0e7;font-size:15px;color:#1a1a17;" />
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <input required placeholder="E-mail ou telefone" style="padding:14px 16px;border:1px solid #e6e1d5;border-radius:12px;background:#f4f0e7;font-size:15px;color:#1a1a17;" />
+            <select style="padding:14px 16px;border:1px solid #e6e1d5;border-radius:12px;background:#f4f0e7;font-size:15px;color:#1a1a17;">
+              <option>Elogio</option><option>Sugestão</option><option>Reclamação</option><option>Dúvida</option>
+            </select>
+          </div>
+          <textarea required rows="4" placeholder="Sua mensagem" style="padding:14px 16px;border:1px solid #e6e1d5;border-radius:12px;background:#f4f0e7;font-size:15px;color:#1a1a17;resize:vertical;"></textarea>
+          <button type="submit" style="align-self:flex-start;font-weight:700;font-size:15px;color:#fff;background:{{ green }};border:none;padding:14px 26px;border-radius:999px;cursor:pointer;" style-hover="background:{{ gold }};color:{{ green }};">Enviar mensagem</button>
+        </form>
+        </sc-if>
+      </div>
+
+      <!-- TRABALHE CONOSCO -->
+      <div id="trabalhe" style="display:flex;flex-direction:column;gap:20px;background:{{ green }};border-radius:24px;padding:36px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Trabalhe conosco</span>
+          <h2 style="margin:0;font-weight:900;font-size:32px;line-height:1.08;letter-spacing:-0.02em;color:#fff;">Venha crescer com a Araçatuba.</h2>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,0.82);">Buscamos gente comprometida para os times de vendas, logística e operação. Deixe seus dados abaixo.</p>
+        </div>
+        <sc-if value="{{ jobSent }}" hint-placeholder-val="{{ false }}">
+          <div style="background:rgba(255,255,255,0.12);border:1px solid {{ gold }};border-radius:16px;padding:24px;color:#fff;font-weight:600;font-size:15px;">Currículo recebido! Nosso RH vai analisar e entrar em contato. 💚</div>
+        </sc-if>
+        <sc-if value="{{ jobOpen }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submitJob }}" style="display:flex;flex-direction:column;gap:14px;">
+          <input required placeholder="Seu nome" style="padding:14px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:12px;background:rgba(255,255,255,0.08);font-size:15px;color:#fff;" />
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <input required placeholder="Telefone / WhatsApp" style="padding:14px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:12px;background:rgba(255,255,255,0.08);font-size:15px;color:#fff;" />
+            <select style="padding:14px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:12px;background:rgba(255,255,255,0.08);font-size:15px;color:#fff;">
+              <option style="color:#1a1a17;">Vendas</option><option style="color:#1a1a17;">Logística / Entrega</option><option style="color:#1a1a17;">Operação / Depósito</option><option style="color:#1a1a17;">Administrativo</option>
+            </select>
+          </div>
+          <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px dashed rgba(255,255,255,0.35);border-radius:12px;cursor:pointer;color:rgba(255,255,255,0.8);font-size:14px;">
+            <span style="width:34px;height:34px;border-radius:8px;background:{{ gold }};color:{{ green }};display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;flex:none;">+</span>
+            Anexar currículo (PDF)
+            <input type="file" accept=".pdf,.doc,.docx" style="display:none;" />
+          </label>
+          <button type="submit" style="align-self:flex-start;font-weight:700;font-size:15px;color:{{ green }};background:{{ gold }};border:none;padding:14px 26px;border-radius:999px;cursor:pointer;" style-hover="background:#fff;">Enviar candidatura</button>
+        </form>
+        </sc-if>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" style="max-width:860px;margin:0 auto;padding:88px 28px;">
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:36px;text-align:center;align-items:center;">
+      <span style="font-weight:700;font-size:12.5px;letter-spacing:0.22em;color:{{ gold }};text-transform:uppercase;">Perguntas frequentes</span>
+      <h2 style="margin:0;font-weight:900;font-size:38px;line-height:1.05;letter-spacing:-0.02em;color:{{ green }};">Tudo que você precisa saber</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <details style="background:#fff;border:1px solid #e6e1d5;border-radius:16px;padding:4px 22px;">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font-weight:800;font-size:17px;color:{{ green }};">
+            {{ f.q }}
+            <span style="width:26px;height:26px;border-radius:50%;background:rgba(28,58,43,0.08);color:{{ green }};display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;">+</span>
+          </summary>
+          <p style="margin:0;padding:0 0 20px;font-size:15.5px;line-height:1.6;color:{{ ink }};text-wrap:pretty;">{{ f.a }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ INSTITUCIONAL ===== -->
+  <footer style="background:{{ ink }};color:rgba(255,255,255,0.72);">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 28px 36px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;">
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:48px;height:48px;border-radius:11px;background:{{ green }};display:flex;align-items:center;justify-content:center;position:relative;flex:none;">
+            <div style="position:absolute;inset:4px;border:1.5px solid {{ gold }};border-radius:7px;opacity:0.85;"></div>
+            <span style="font-weight:900;font-size:30px;line-height:1;color:{{ gold }};letter-spacing:-0.03em;">A</span>
+          </div>
+          <div style="display:flex;flex-direction:column;line-height:0.95;">
+            <span style="font-weight:900;font-size:21px;color:#fff;letter-spacing:-0.02em;">ARAÇATUBA</span>
+            <span style="font-weight:700;font-size:9px;letter-spacing:0.32em;color:{{ gold }};">DISTRIBUIDORA</span>
+          </div>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.55;max-width:320px;">{{ tagline }}. Distribuição de alimentos e bebidas em Manaus e região.</p>
+        <div style="display:flex;gap:12px;">
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" style="width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;" style-hover="background:{{ gold }};">
+            <span style="width:18px;height:18px;border:2px solid #fff;border-radius:6px;position:relative;display:block;">
+              <span style="position:absolute;top:3px;left:3px;width:8px;height:8px;border:2px solid #fff;border-radius:50%;"></span>
+              <span style="position:absolute;top:1px;right:1px;width:2.5px;height:2.5px;background:#fff;border-radius:50%;"></span>
+            </span>
+          </a>
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" style="width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:#fff;font-family:Georgia,serif;" style-hover="background:{{ gold }};">f</a>
+          <!-- X -->
+          <a href="#" aria-label="X" style="width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff;" style-hover="background:{{ gold }};">𝕏</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="font-weight:800;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Contato</div>
+        <div style="font-size:14px;line-height:1.5;">R. Macatuba, 401 — Cidade de Deus<br/>Jorge Teixeira, Manaus/AM<br/>CEP 69.088-245</div>
+        <div style="font-size:14px;">Tel: (92) 8590-2501</div>
+        <a href="{{ wa }}" target="_blank" style="font-size:14px;color:{{ gold }};font-weight:700;">Falar no WhatsApp →</a>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="font-weight:800;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Institucional</div>
+        <a href="#empresa" style="font-size:14px;color:rgba(255,255,255,0.72);" style-hover="color:{{ gold }};">A empresa</a>
+        <a href="#operacao" style="font-size:14px;color:rgba(255,255,255,0.72);" style-hover="color:{{ gold }};">Operação</a>
+        <a href="#estrutura" style="font-size:14px;color:rgba(255,255,255,0.72);" style-hover="color:{{ gold }};">Estrutura</a>
+        <a href="#ouvidoria" style="font-size:14px;color:rgba(255,255,255,0.72);" style-hover="color:{{ gold }};">Ouvidoria</a>
+        <a href="#trabalhe" style="font-size:14px;color:rgba(255,255,255,0.72);" style-hover="color:{{ gold }};">Trabalhe conosco</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1200px;margin:0 auto;padding:22px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,0.5);">
+        <span>© 2026 Distribuidora Araçatuba de Alimentos LTDA — CNPJ 34.602.080/0001-77</span>
+        <span>Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLUTUANTE ===== -->
+  <a href="{{ wa }}" target="_blank" aria-label="WhatsApp" style="position:fixed;bottom:26px;right:26px;z-index:80;display:flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:14px 22px 14px 16px;border-radius:999px;box-shadow:0 14px 34px -12px rgba(0,0,0,0.5);font-weight:800;font-size:15px;" style-hover="background:#1ebe5a;">
+    <span style="width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;position:relative;">
+      <span style="width:18px;height:16px;background:#25D366;border-radius:50% 50% 50% 3px;display:block;"></span>
+    </span>
+    Fale no WhatsApp
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;green&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1c3a2b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;gold&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#d9a441&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;tagline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Abastecendo o seu negócio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Textos&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;559285902501&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;}}">
+class Component extends DCLogic {
+  state = { ouvSent: false, jobSent: false };
+  renderVals() {
+    const green = this.props.green ?? "#1c3a2b";
+    const gold = this.props.gold ?? "#d9a441";
+    return {
+      green, gold,
+      ink: "#1a1a17",
+      muted: "#8a8578",
+      tagline: this.props.tagline ?? "Abastecendo o seu negócio",
+      wa: "https://wa.me/" + (this.props.whatsapp ?? "559285902501"),
+      ouvSent: this.state.ouvSent,
+      jobSent: this.state.jobSent,
+      ouvOpen: !this.state.ouvSent,
+      jobOpen: !this.state.jobSent,
+      submitOuv: (e) => { e.preventDefault(); this.setState({ ouvSent: true }); },
+      submitJob: (e) => { e.preventDefault(); this.setState({ jobSent: true }); },
+      depoimentos: [
+        { texto: "Nunca mais fiquei sem produto na prateleira. A entrega chega no dia combinado, sempre.", nome: "Márcia Alves", negocio: "Mercadinho São Jorge", inicial: "M" },
+        { texto: "O vendedor conhece meu estoque melhor que eu. Isso faz toda a diferença no atacado.", nome: "Cleber Souza", negocio: "Conveniência Cidade Nova", inicial: "C" },
+        { texto: "Preço justo e um mix de bebidas completo. Virou meu fornecedor principal.", nome: "Rafael Lima", negocio: "Bar do Rafa", inicial: "R" },
+        { texto: "Atendimento rápido no WhatsApp e pedido sempre certinho. Recomendo demais.", nome: "Denise Farias", negocio: "Padaria Pão Quente", inicial: "D" },
+        { texto: "Parceria de verdade. Quando precisei de volume extra, resolveram no mesmo dia.", nome: "Antônio Nogueira", negocio: "Distribuidora do Bairro", inicial: "A" },
+        { texto: "Confiança total na logística. Nunca tive problema com prazo ou avaria.", nome: "Patrícia Gomes", negocio: "Supermercado Bom Preço", inicial: "P" },
+      ].flatMap((x) => [x, x]),
+      faqs: [
+        { q: "Qual a região de entrega?", a: "Atendemos Manaus e região metropolitana. Consulte nossa equipe pelo WhatsApp para confirmar a cobertura do seu endereço." },
+        { q: "Existe pedido mínimo?", a: "Sim, trabalhamos com um valor mínimo de pedido que varia conforme a região de entrega. Seu consultor informa o valor no primeiro contato." },
+        { q: "Quais categorias de produtos vocês distribuem?", a: "Alimentos em geral, bebidas, laticínios e frios, itens de padaria e confeitaria, higiene pessoal e produtos de limpeza — um portfólio pensado para o varejo." },
+        { q: "Quais as formas de pagamento?", a: "Aceitamos as principais formas de pagamento, com condições especiais para clientes recorrentes. Fale com o consultor para conhecer os prazos disponíveis." },
+        { q: "Qual o prazo de entrega?", a: "Trabalhamos com roteirização por região para cumprir o prazo combinado no pedido, normalmente em poucos dias úteis após a confirmação." },
+        { q: "Como me torno cliente?", a: "É simples: entre em contato pelo WhatsApp, envie os dados do seu comércio e um consultor abre seu cadastro e monta o primeiro pedido com você." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
