@@ -43,7 +43,7 @@ export default function Hero() {
 
       <Reveal delay={0.15} style={{ position: 'relative' }}>
         <div style={{ borderRadius: 26, overflow: 'hidden', aspectRatio: '4 / 5', boxShadow: '0 30px 70px -40px rgba(20,40,25,0.6)' }}>
-          <img src="/images/hero-equipe.webp" alt="Equipe da Araçatuba Distribuidora" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/images/hero-equipe.webp" alt="Equipe da Araçatuba Distribuidora" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
         </div>
         <div style={{ position: 'absolute', bottom: -22, left: -22, background: brand.green, color: '#fff', borderRadius: 18, padding: '18px 22px', maxWidth: 230, boxShadow: '0 18px 40px -22px rgba(20,40,25,0.7)' }}>
           <div style={{ fontWeight: 800, fontSize: 15, color: brand.gold, marginBottom: 4 }}>Perto de você</div>
