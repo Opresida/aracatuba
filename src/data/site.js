@@ -30,6 +30,7 @@ export const site = {
 
 export const nav = [
   { href: '#empresa', label: 'A empresa' },
+  { href: '#produtos', label: 'Produtos' },
   { href: '#operacao', label: 'Operação' },
   { href: '#estrutura', label: 'Estrutura' },
   { href: '#trabalhe', label: 'Trabalhe conosco' },

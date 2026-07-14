@@ -4,6 +4,7 @@ import Logo from './Logo.jsx';
 
 const inst = [
   { href: '#empresa', label: 'A empresa' },
+  { href: '#produtos', label: 'Produtos' },
   { href: '#operacao', label: 'Operação' },
   { href: '#estrutura', label: 'Estrutura' },
   { href: '#ouvidoria', label: 'Ouvidoria' },

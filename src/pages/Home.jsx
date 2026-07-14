@@ -1,6 +1,7 @@
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import Empresa from '../components/Empresa.jsx';
+import Produtos from '../components/Produtos.jsx';
 import Operacao from '../components/Operacao.jsx';
 import Depoimentos from '../components/Depoimentos.jsx';
 import Estrutura from '../components/Estrutura.jsx';
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Empresa />
+        <Produtos />
         <Operacao />
         <Depoimentos />
         <Estrutura />
