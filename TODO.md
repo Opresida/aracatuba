@@ -1,30 +1,33 @@
 # TODO — Araçatuba Distribuidora
 
-## Deploy Netlify — passo manual (só isto falta)
-O projeto está **pronto pra publicar**. Como o deploy exige login na Netlify (não dá pra automatizar por aqui), faça uma vez:
-
+## Deploy Netlify — passo manual (só isto falta pra ir ao ar)
+Projeto pronto pra publicar. Como o deploy exige login na Netlify (não automatizável daqui), faça uma vez:
 1. Netlify → **Add new site → Import an existing project → GitHub → `Opresida/aracatuba`**.
-2. Build já vem preenchido pelo `netlify.toml` (command `npm run build`, publish `dist`, Node 22). É só **Deploy**.
-3. (Opcional) **Domain settings** → definir o domínio/subdomínio final.
+2. Build já vem do `netlify.toml` (`npm run build`, publish `dist`, Node 22). **Deploy**.
+3. (Opcional) **Domain settings** → domínio final.
 
-Depois do deploy, um ajuste fino de SEO (quando souber a URL final):
-- [ ] Trocar `og:image`/`twitter:image` para **URL absoluta** nos dois HTMLs — `index.html` (`/og-image.png`) e `brandbook.html` (`/og-brandbook.png`). O WhatsApp exige URL absoluta pra mostrar a prévia (ex.: `https://aracatuba.netlify.app/og-image.png`).
+### Ajuste fino de SEO pós-deploy (quando souber a URL)
+- [ ] `og:image`/`twitter:image` → **URL absoluta** nos dois HTMLs (`index.html` e `brandbook.html`). WhatsApp exige absoluta pra mostrar a prévia.
 - [ ] Adicionar `og:url` com o domínio final em cada HTML.
 
 ## Backend / integrações (quando aprovado)
-- [ ] **Formulários reais** — Ouvidoria e Trabalhe conosco hoje são client-side. Ligar a Netlify Forms (Humberto pediu: *depois*, não agora). Upload de currículo (PDF) precisa de storage.
-- [ ] **Redes sociais** — trocar os `#` do rodapé pelos perfis reais quando existirem.
+- [ ] **Netlify Forms** — Ouvidoria e Trabalhe conosco hoje são client-side. Ligar quando o Humberto pedir (pediu: *depois*). Upload de currículo (PDF) precisa de storage.
+- [ ] **Redes sociais** — trocar os `#` do rodapé pelos perfis reais.
 
 ## Conteúdo
-- [ ] Substituir/adicionar fotos de produto conforme o cliente enviar (galeria é data-driven em `src/data/produtos.js`).
-- [ ] Confirmar telefone/WhatsApp com o cliente.
+- [ ] Adicionar/trocar fotos de produto (galeria data-driven em `src/data/produtos.js`).
+- [ ] Confirmar telefone/WhatsApp e e-mail institucional com o cliente.
+- [ ] Ajustar mix de itens dos chips se o cliente refinar o portfólio.
+
+## Melhorias possíveis (não urgentes)
+- [ ] Barra de submenus do brandbook: hoje rola horizontal no mobile — avaliar quebrar em 2 linhas.
+- [ ] Logos completos (principal/mono) em download no brandbook, além do ícone.
 
 ## Feito
-- [x] Conversão do export `.dc.html` para React 19 + Vite.
-- [x] Todas as seções portadas + seção **Nossos produtos** (cesta básica + bebidas linha seca, split 70/30, galeria de fotos).
-- [x] Rota **/brandbook** completa, com submenus: Logo · Cores (copiar hex) · Tipografia · UI System · Papel timbrado (PDF A4) · Cartão & E-mail (gerador de cartão em PDF + assinatura de e-mail HTML) · Manual de uso (fazer/não fazer). Libs de PDF (html2canvas/jspdf) em lazy-load.
-- [x] **Responsividade completa** (mobile/tablet/desktop) com menu hamburger.
-- [x] **Favicon** (SVG + PNG) e **OG image** 1200×630 pra compartilhamento.
-- [x] `netlify.toml` com Node 22, redirect SPA, cache de assets e headers de segurança.
-- [x] Build de produção validado (preview servindo `dist` com todos os assets 200).
-- [x] Repo `Opresida/aracatuba` hospedando a versão React.
+- [x] Conversão do export `.dc.html` → React 19 + Vite; repo `Opresida/aracatuba`.
+- [x] Home completa + seção **Nossos produtos** (cesta básica + bebidas linha seca, split 70/30, galeria de fotos reais tratadas).
+- [x] Rota **/brandbook** completa (Logo · Cores/copiar hex · Tipografia · UI System · Papel timbrado PDF A4 · Cartão & E-mail: cartão PDF + assinatura HTML + OG download · Manual de uso). PDF em lazy-load.
+- [x] **Responsividade completa** (menu hamburger, grids colapsam, sem overflow horizontal).
+- [x] Favicon (SVG+PNG) e **OG por rota** (`og-image.png` / `og-brandbook.png`).
+- [x] `netlify.toml` (Node 22, redirect SPA + rewrite brandbook, cache, headers de segurança).
+- [x] 5 docs canônicos (README, CONTEXT, ARCHITECTURE, PROJECT_CONTEXT, TODO) + CLAUDE.md.

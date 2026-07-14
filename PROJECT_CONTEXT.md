@@ -1,28 +1,31 @@
 # PROJECT_CONTEXT — Araçatuba Distribuidora
 
-> Contexto operacional para quem (ou qual agente) for continuar o projeto.
+> Visão consolidada + status/localização para quem (ou qual agente) continuar o projeto.
 
 ## Localização
 - **Projeto React (ativo):** `C:\Users\user\aracatuba`
-- **Export original de design:** `C:\Users\user\Desktop\MAZARI HOLDING\aracatuba` (`.dc.html`) — também copiado em `aracatuba/design-source/`
+- **Export original de design:** `design-source/` (`.dc.html`) — cópia do que veio no Desktop
 - **Repo GitHub:** https://github.com/Opresida/aracatuba (org Opresida)
 
 ## Como rodar
 ```bash
 cd /c/Users/user/aracatuba
 npm install
-npm run dev     # porta 5000 (cai pra 5001 se ocupada)
+npm run dev     # porta 5000 (cai para 5001+ se ocupada)
 ```
-Não abrir Simple Browser / VS Code embutido (Humberto usa ANTIGRAVITY) — só informar a URL localhost.
+Não abrir Simple Browser / VS Code embutido (ANTIGRAVITY) — só informar a URL localhost.
 
 ## Stack e convenções
-Espelha o padrão institucional MAZARI (referência: GLOMAM): Vite + React 19 + react-router-dom + framer-motion, deploy Netlify, porta 5000, host 0.0.0.0. Design é **exclusivo** da Araçatuba (verde/dourado, Archivo) — não replicar visual de outros clientes.
+Vite + React 19 + react-router-dom + framer-motion + html2canvas/jsPDF. Deploy Netlify, porta 5000, host 0.0.0.0. Padrão institucional MAZARI (ref: GLOMAM), mas **design exclusivo da Araçatuba** (verde/dourado, Archivo). Detalhes em `CLAUDE.md`, `CONTEXT.md`, `ARCHITECTURE.md`.
 
-## Natureza do site
-One-page institucional, sem backend. Formulários são client-side por enquanto (ver TODO para integração real).
+## O que é
+Site institucional (one-page) + manual de marca (`/brandbook`) da Distribuidora Araçatuba de Alimentos — atacado de alimentos e bebidas em Manaus/AM, desde 2019. CNPJ 34.602.080/0001-77. Cliente da MAZARI Holding.
 
-## Cliente
-Distribuidora de alimentos e bebidas (atacado) — Manaus/AM, desde 2019. CNPJ 34.602.080/0001-77.
+## Status
+- **Pronto e responsivo** (mobile/tablet/desktop), build de produção limpo.
+- Rotas `/` (site) e `/brandbook` (manual completo, 7 submenus, geradores de cartão/assinatura/timbrado).
+- Formulários client-side (sem backend).
+- **Deploy pendente** — só conectar o repo na Netlify (ver `TODO.md`).
 
 ## Próximos passos prováveis
-Ver `TODO.md`. Prioridades típicas: favicon/OG, deploy Netlify, decidir git (React vs export no repo), e ligar os formulários se o cliente quiser recebê-los.
+Ver `TODO.md`: publicar na Netlify → ajustar OG absoluta → (quando pedido) ligar Netlify Forms → refinar fotos/itens de produto conforme o cliente.
