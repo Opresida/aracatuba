@@ -102,3 +102,18 @@ bg = Image.new("RGBA", (180, 180), (0, 0, 0, 0))
 bg.alpha_composite(fav)
 bg.save(os.path.join(DIR, "favicon.png"), "PNG")
 print("favicon.png 180x180 gerado")
+
+# ---------- Avatar redondo p/ redes sociais ----------
+# Renderiza em 4x e reduz (antialias) para bordas suaves.
+S = 1024
+sc = 4
+big = Image.new("RGBA", (S * sc, S * sc), (0, 0, 0, 0))
+db = ImageDraw.Draw(big)
+db.ellipse([0, 0, S * sc - 1, S * sc - 1], fill=GREEN)            # círculo verde full-bleed
+inset = int(72 * sc)
+db.ellipse([inset, inset, S * sc - inset, S * sc - inset], outline=GOLD, width=int(11 * sc))  # anel dourado
+fA = ImageFont.truetype(FBLACK, int(600 * sc))
+db.text((S * sc / 2, S * sc / 2 - S * sc * 0.03), "A", font=fA, fill=GOLD, anchor="mm")        # "A" dourado
+avatar = big.resize((S, S), Image.LANCZOS)
+avatar.save(os.path.join(DIR, "logo-social.png"), "PNG")
+print("logo-social.png 1024x1024 (redondo, transparente) gerado")

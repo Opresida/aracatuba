@@ -279,6 +279,19 @@ export default function Brandbook() {
                 <a href="/favicon.png" download="aracatuba-icone.png" className="btn-green" style={btnGreen}>↓ Ícone PNG</a>
               </div>
             </Block>
+
+            <Block label="Logo para redes sociais" desc="Versão redonda (avatar / foto de perfil) para Instagram, WhatsApp, Facebook e afins. PNG com fundo transparente, pronto para o corte circular.">
+              <div style={{ ...card, padding: 22, alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+                <div style={{ width: 132, height: 132, borderRadius: '50%', overflow: 'hidden', background: cream, flex: 'none', boxShadow: '0 10px 26px -16px rgba(20,30,20,0.5)' }}>
+                  <img src="/logo-social.png" alt="Logo redonda da Araçatuba para redes sociais" style={{ width: '100%', height: '100%', display: 'block' }} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <span style={{ fontWeight: 800, fontSize: 15, color: green }}>Avatar redondo</span>
+                  <span style={{ fontSize: 12.5, color: muted }}>PNG · 1024×1024 · fundo transparente</span>
+                  <a href="/logo-social.png" download="aracatuba-logo-social.png" className="btn-green" style={{ ...btnGreen, marginTop: 4 }}>↓ Baixar logo redonda</a>
+                </div>
+              </div>
+            </Block>
           </>
         )}
 
