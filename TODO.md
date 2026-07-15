@@ -10,8 +10,8 @@ Projeto pronto pra publicar. Como o deploy exige login na Netlify (não automati
 - [ ] `og:image`/`twitter:image` → **URL absoluta** nos dois HTMLs (`index.html` e `brandbook.html`). WhatsApp exige absoluta pra mostrar a prévia.
 - [ ] Adicionar `og:url` com o domínio final em cada HTML.
 
-## Backend / integrações (quando aprovado)
-- [ ] **Netlify Forms** — Ouvidoria e Trabalhe conosco hoje são client-side. Ligar quando o Humberto pedir (pediu: *depois*). Upload de currículo (PDF) precisa de storage.
+## Backend / integrações
+- [x] **Netlify Forms** — Ouvidoria (`ouvidoria`) e Trabalhe conosco (`trabalhe-conosco`, com upload de currículo) ligados: forms ocultos de detecção no `index.html` + forms React com `name`/honeypot/`form-name` + envio AJAX. **Testar no site publicado** (só funciona no Netlify, não local) e configurar notificações por e-mail no painel Netlify → Forms.
 - [ ] **Redes sociais** — trocar os `#` do rodapé pelos perfis reais.
 
 ## Conteúdo

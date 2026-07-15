@@ -36,6 +36,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Forms ocultos p/ detecção do Netlify Forms no build (SPA: os forms reais são renderizados via React) -->
+  <form name="ouvidoria" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nome" />
+    <input type="text" name="contato" />
+    <select name="assunto"><option>Elogio</option><option>Sugestão</option><option>Reclamação</option><option>Dúvida</option></select>
+    <textarea name="mensagem"></textarea>
+    <input name="bot-field" />
+  </form>
+  <form name="trabalhe-conosco" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+    <input type="text" name="nome" />
+    <input type="text" name="telefone" />
+    <select name="area"><option>Vendas</option><option>Logística / Entrega</option><option>Operação / Depósito</option><option>Administrativo</option></select>
+    <input type="file" name="curriculo" />
+    <input name="bot-field" />
+  </form>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
