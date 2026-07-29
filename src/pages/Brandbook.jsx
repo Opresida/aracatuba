@@ -436,7 +436,7 @@ font-family: 'Archivo', system-ui, sans-serif;`}</pre>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 20 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <Emblem size={54} />
-                    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, gap: 5 }}>
                       <span style={{ fontWeight: 900, fontSize: 22, color: green, letterSpacing: '-0.02em' }}>ARAÇATUBA</span>
                       <span style={{ fontWeight: 700, fontSize: 9.5, letterSpacing: '0.3em', color: ink }}>DISTRIBUIDORA</span>
                     </div>
