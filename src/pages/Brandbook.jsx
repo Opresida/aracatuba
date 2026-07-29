@@ -49,7 +49,7 @@ function Emblem({ size, bg = green, letter = gold, ring = gold, baseline = false
   return (
     <div style={{ width: size, height: size, borderRadius: size * 0.17, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', flex: 'none' }}>
       <div style={{ position: 'absolute', inset, border: `${Math.max(1.5, size * 0.014)}px solid ${ring}`, borderRadius: size * 0.12, opacity: 0.82 }} />
-      <span style={{ fontWeight: 900, fontSize: size * 0.62, lineHeight: 1, color: letter, letterSpacing: '-0.03em' }}>A</span>
+      <span style={{ fontWeight: 900, fontSize: size * 0.62, lineHeight: 1, color: letter, position: 'relative', top: size * 0.012 }}>A</span>
       {baseline && <div style={{ position: 'absolute', bottom: size * 0.17, width: size * 0.3, height: Math.max(3, size * 0.027), borderRadius: 2, background: letter, opacity: 0.9 }} />}
     </div>
   );
@@ -107,6 +107,7 @@ export default function Brandbook() {
     setPdfMsg('Gerando PDF…');
     try {
       const { html2canvas, jsPDF } = await loadPdfLibs();
+      if (document.fonts?.ready) await document.fonts.ready; // garante a Archivo carregada antes de rasterizar (senão o "A" sai torto)
       const opts = { scale: 4, backgroundColor: null, useCORS: true, logging: false };
       const f = await html2canvas(frenteRef.current, opts);
       const v = await html2canvas(versoRef.current, opts);
@@ -127,6 +128,7 @@ export default function Brandbook() {
     setPdfMsg('Gerando timbrado…');
     try {
       const { html2canvas, jsPDF } = await loadPdfLibs();
+      if (document.fonts?.ready) await document.fonts.ready; // garante a Archivo carregada antes de rasterizar (senão o "A" sai torto)
       const c = await html2canvas(timbradoRef.current, { scale: 3, backgroundColor: '#ffffff', useCORS: true, logging: false });
       const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       pdf.addImage(c.toDataURL('image/png'), 'PNG', 0, 0, 210, 297, undefined, 'FAST');
