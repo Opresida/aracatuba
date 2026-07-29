@@ -421,7 +421,7 @@ font-family: 'Archivo', system-ui, sans-serif;`}</pre>
 
         {/* ═══════════ PAPEL TIMBRADO ═══════════ */}
         {tab === 'timbrado' && (
-          <Block label="04 — Papel timbrado" titulo="Modelo A4" desc="Cabeçalho e rodapé institucional prontos para cartas, ofícios e propostas. Clique para baixar o PDF em A4.">
+          <Block label="04 — Papel timbrado" titulo="Modelo A4" desc="Cabeçalho e rodapé institucionais com um exemplo real — a Carta de Intenção de Compra (LOI) — encaixada em uma única folha A4. Clique para baixar o PDF.">
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 4 }}>
               <button className="btn-green" style={btnGreen} onClick={baixarTimbradoPDF}>↓ Baixar timbrado (PDF A4)</button>
               {pdfMsg && <span style={{ fontSize: 13, color: green, alignSelf: 'center' }}>{pdfMsg}</span>}
@@ -441,12 +441,64 @@ font-family: 'Archivo', system-ui, sans-serif;`}</pre>
                     <div>Tel: {site.telefone}</div>
                   </div>
                 </div>
-                <div style={{ height: 2, background: gold, margin: '18px 0 28px' }} />
-                <div style={{ flex: 1, fontSize: 13, color: ink, lineHeight: 1.8 }}>
-                  <p style={{ margin: '0 0 20px', color: muted }}>Manaus, ____ de ______________ de 20____.</p>
-                  <p style={{ margin: '0 0 16px' }}>Prezado(a) Senhor(a),</p>
-                  <p style={{ margin: '0 0 14px', color: 'rgba(26,26,23,0.55)' }}>[ Corpo da carta / ofício / proposta. Este é um modelo de papel timbrado com o cabeçalho e rodapé institucionais da Araçatuba Distribuidora. ]</p>
-                  <p style={{ margin: 0, color: 'rgba(26,26,23,0.4)' }}>__________________________________________________________________</p>
+                <div style={{ height: 2, background: gold, margin: '12px 0 14px' }} />
+                <div style={{ flex: 1, fontSize: 8.6, color: ink, lineHeight: 1.42, display: 'flex', flexDirection: 'column' }}>
+                  <p style={{ margin: '0 0 8px', color: muted }}>Manaus/AM, 29 de julho de 2026.</p>
+
+                  <div style={{ textAlign: 'center', margin: '0 0 10px' }}>
+                    <div style={{ fontWeight: 900, fontSize: 12.5, color: green, letterSpacing: '0.01em' }}>CARTA DE INTENÇÃO DE COMPRA — LOI</div>
+                    <div style={{ fontWeight: 700, fontSize: 9, color: ink, marginTop: 2 }}>Pé de Galinha Congelado Classe A para Exportação</div>
+                  </div>
+
+                  <p style={{ margin: '0 0 6px' }}>A quem interessar possa,</p>
+                  <p style={{ margin: '0 0 8px', textAlign: 'justify' }}>
+                    A <strong>DISTRIBUIDORA ARACATUBA DE ALIMENTOS LTDA.</strong>, pessoa jurídica de direito privado, inscrita no CNPJ nº 34.602.080/0001-77, com sede na Rua Macatuba, nº 401, Cidade de Deus, Bairro Jorge Teixeira, Manaus/AM, CEP 69.088-245, neste ato representada por seu Diretor de Compras, Sr. Rodolfo Carvalho, manifesta, por meio desta, seu interesse comercial formal e de boa-fé na aquisição do produto abaixo identificado, observadas as condições e especificações descritas nesta Carta de Intenção de Compra.
+                  </p>
+                  <p style={{ margin: '0 0 10px' }}><strong>Produto:</strong> Pé de Galinha Congelado Classe A para Exportação (Frozen Chicken Feet Grade A).</p>
+
+                  {/* 1. Condições comerciais */}
+                  <div style={{ fontWeight: 900, fontSize: 8.8, color: green, letterSpacing: '0.06em', margin: '0 0 4px' }}>1. CONDIÇÕES COMERCIAIS</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '118px 1fr', columnGap: 12, rowGap: 3, margin: '0 0 10px' }}>
+                    <span style={{ fontWeight: 700, color: muted }}>Objeto da compra</span><span>Aquisição do produto acima identificado.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Quantidade</span><span>02 (dois) contêineres refrigerados de 40 pés.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Condição de venda</span><span>FOB — Porto de Santos/SP — Brasil (Incoterms® 2020).</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Preço</span><span>A ser negociado entre as partes.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Pagamento</span><span>À vista, conforme condições a serem definidas no Contrato de Compra e Venda Internacional.</span>
+                  </div>
+
+                  {/* 2. Embalagem e congelamento */}
+                  <div style={{ fontWeight: 900, fontSize: 8.8, color: green, letterSpacing: '0.06em', margin: '0 0 4px' }}>2. ESPECIFICAÇÕES DE EMBALAGEM E CONGELAMENTO</div>
+                  <p style={{ margin: '0 0 3px', textAlign: 'justify' }}><strong>Temperatura de congelamento.</strong> Congelamento rápido a ultrabaixa temperatura, com manutenção a −18 °C ou inferior durante o período integral de armazenamento e transporte.</p>
+                  <p style={{ margin: '0 0 10px', textAlign: 'justify' }}><strong>Embalagem primária e secundária.</strong> A mercadoria deverá ser acondicionada em polietileno novo, atóxico e adequado para alimentos, com rotulagem em mandarim e inglês, em conformidade com as normas aplicáveis à importação pela China.</p>
+
+                  {/* 3. Documentação e habilitação */}
+                  <div style={{ fontWeight: 900, fontSize: 8.8, color: green, letterSpacing: '0.06em', margin: '0 0 4px' }}>3. DOCUMENTAÇÃO E HABILITAÇÃO</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '118px 1fr', columnGap: 12, rowGap: 3, margin: '0 0 10px' }}>
+                    <span style={{ fontWeight: 700, color: muted }}>Habilitação GACC</span><span>O frigorífico deverá constar ativamente na lista de plantas autorizadas pela alfândega da China para exportação de carne de aves.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Número de SIF</span><span>Confirmação de que o registro no Serviço de Inspeção Federal está ativo e regular.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>CSI</span><span>Garantia de que a carga atende aos protocolos sanitários bilaterais exigidos pelo governo chinês, com emissão do Certificado Sanitário Internacional aplicável.</span>
+                  </div>
+
+                  {/* 4. Padrão físico e classificação */}
+                  <div style={{ fontWeight: 900, fontSize: 8.8, color: green, letterSpacing: '0.06em', margin: '0 0 4px' }}>4. PADRÃO FÍSICO E CLASSIFICAÇÃO DO PRODUTO</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '118px 1fr', columnGap: 12, rowGap: 3, margin: '0 0 10px' }}>
+                    <span style={{ fontWeight: 700, color: muted }}>Classificação Paw</span><span>Pés limpos, sem unhas (quando exigido pelo comprador), sem pele amarela remanescente, com remoção da cutícula externa e sem calosidades.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Integridade</span><span>Pés inteiros, sem ossos quebrados e sem manchas de sangue.</span>
+                    <span style={{ fontWeight: 700, color: muted }}>Peso e tamanho</span><span>Gramatura conforme padrão exigido pelo importador asiático — pés maiores e mais carnudos possuem maior valorização comercial.</span>
+                  </div>
+
+                  {/* 5. Disposições finais */}
+                  <div style={{ fontWeight: 900, fontSize: 8.8, color: green, letterSpacing: '0.06em', margin: '0 0 4px' }}>5. DISPOSIÇÕES FINAIS E VALIDADE</div>
+                  <p style={{ margin: '0 0 3px', textAlign: 'justify' }}>A presente Carta de Intenção demonstra a efetiva intenção comercial da Compradora em concluir a operação, condicionada exclusivamente à negociação do preço final, à disponibilidade da mercadoria, à aprovação documental e à assinatura do contrato definitivo.</p>
+                  <p style={{ margin: '0 0 8px', textAlign: 'justify' }}>Esta Carta de Intenção possui validade de 30 (trinta) dias contados de sua assinatura.</p>
+
+                  {/* Assinatura */}
+                  <div style={{ marginTop: 'auto', paddingTop: 6, textAlign: 'center' }}>
+                    <div style={{ width: 230, borderTop: `1px solid ${ink}`, margin: '0 auto 4px' }} />
+                    <div style={{ fontWeight: 800, fontSize: 9.2 }}>Rodolfo Carvalho</div>
+                    <div style={{ color: muted }}>Diretor de Compras</div>
+                    <div style={{ color: muted }}>Distribuidora Araçatuba de Alimentos LTDA.</div>
+                  </div>
                 </div>
                 <div style={{ marginTop: 24 }}>
                   <div style={{ height: 1, background: border, marginBottom: 12 }} />
