@@ -43,15 +43,18 @@ const TABS = [
   { id: 'manual', label: 'Manual de uso' },
 ];
 
-/* ───────── Emblema "A" parametrizável ───────── */
+/* ───────── Emblema "A" — logo oficial (mesma geometria do public/favicon.svg) ─────────
+   viewBox 64×64: quadrado arredondado + anel + "A" em Arial Black ancorado na baseline
+   (y=47). Usa fonte de sistema (Arial), então rende igual no html2canvas/PDF sem depender
+   de webfont — e reproduz fielmente a marca em vez de centralizar o glifo no meio. */
 function Emblem({ size, bg = green, letter = gold, ring = gold, baseline = false }) {
-  const inset = Math.max(4, Math.round(size * 0.062));
   return (
-    <div style={{ width: size, height: size, borderRadius: size * 0.17, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', flex: 'none' }}>
-      <div style={{ position: 'absolute', inset, border: `${Math.max(1.5, size * 0.014)}px solid ${ring}`, borderRadius: size * 0.12, opacity: 0.82 }} />
-      <span style={{ fontWeight: 900, fontSize: size * 0.62, lineHeight: 1, color: letter, position: 'relative', top: size * 0.012 }}>A</span>
-      {baseline && <div style={{ position: 'absolute', bottom: size * 0.17, width: size * 0.3, height: Math.max(3, size * 0.027), borderRadius: 2, background: letter, opacity: 0.9 }} />}
-    </div>
+    <svg width={size} height={size} viewBox="0 0 64 64" style={{ display: 'block', flex: 'none' }} aria-hidden="true">
+      <rect width="64" height="64" rx="14" fill={bg} />
+      <rect x="6" y="6" width="52" height="52" rx="9" fill="none" stroke={ring} strokeWidth="2" opacity="0.85" />
+      <text x="32" y="47" fontFamily="Arial, Helvetica, sans-serif" fontSize="46" fontWeight="900" fill={letter} textAnchor="middle">A</text>
+      {baseline && <rect x="22" y="52" width="20" height="2.4" rx="1.2" fill={letter} opacity="0.9" />}
+    </svg>
   );
 }
 
